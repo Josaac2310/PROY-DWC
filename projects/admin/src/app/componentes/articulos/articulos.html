@@ -1,0 +1,9 @@
+<h2>Lista de artículos</h2>
+<ul>
+  @for (articulo of listaArticulos; track $index) {
+    <li (click)="seleccionaArticulo(articulo.id)">{{articulo.id}} - {{articulo.nombre}} </li>
+  }
+</ul>
+@if (articuloSeleccionado()) {
+  <app-detalle-articulo [articleId]="articuloSeleccionado()"></app-detalle-articulo>
+}

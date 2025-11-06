@@ -1,0 +1,11 @@
+<h2>Galería de Fotos</h2>
+
+<div *ngIf="loading" class="loading">Cargando fotos...</div>
+
+<div *ngIf="!loading" class="galeria">
+  <div *ngFor="let foto of fotos" class="foto-card">
+    <img [src]="foto.thumbnailUrl" [alt]="foto.title">
+    <h3>{{ foto.title }}</h3>
+    <button (click)="verDetalle(foto.id)">Ver detalle</button>
+  </div>
+</div>
